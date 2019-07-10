@@ -1,0 +1,72 @@
+
+## Block Chunk
+```{r }
+plot(cars)
+```
+
+## Inline Chunk 
+1+1= `r 1+1`
+
+### `echo=false` 옵션 : 코드출력x
+```{r echo=FALSE}
+a <- rnorm(1000)
+hist(a, col="orange")
+```
+
+### `eval= FALSE` 옵션 : 결과출력자체가 x
+```{r eval= FALSE}
+a <- rnorm(1000)
+hist(a, col="orange")
+```
+
+### `results='hide` 옵션 : 계산 결과값만 출력x
+```{r results='hide'}
+a <- rnorm(1000)
+hist(a, col="blue")
+mean(a)
+```
+
+# Small fig.width
+```{r, fig.width = 2}
+library(ggplot2)
+ggplot(cars, aes(speed, dist)) + geom_point()
+```
+
+# Bigger fig.width
+```{r, fig.width = 4}
+ggplot(cars, aes(speed, dist)) + geom_point()
+```
+```{r out.width = "20%"}
+ggplot(cars, aes(speed, dist)) + geom_point()
+```
+```{r out.width = "50%"}
+ggplot(cars, aes(speed, dist)) + geom_point()
+```
+
+## URL Chunk
+```{r, out.width = "50%"}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/MC_
+Drei-Finger-Faultier.jpg/330px-MC_Drei-Finger-Faultier.jpg")
+```
+
+## Table Chunk
+```{r table}
+knitr::kable(head(mtcars))
+```
+
+```{r cols.print=3, rows.print=3}
+head(mtcars)
+```
+
+아래내용을 markdown 처음에 넣어주면 페이지로 넘어가게 동작.
+
+---
+title: "Motor Trend Car Road Tests"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+mtcars
+```

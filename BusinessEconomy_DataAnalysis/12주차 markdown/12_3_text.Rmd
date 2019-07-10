@@ -1,0 +1,58 @@
+
+# 글자크기 바꾸기
+'그냥'
+
+'---'
+-
+'==='
+=
+#'#'
+###'###'
+#####'#####'
+
+
+# 수평선 그리기
+***
+---
+
+
+# 순서있는 목차
+1. aa
+2. bb
+
+# 순서없는 목차
+* aa
+- aa
++ aa
+
+# 진하게 기울게
+aa *aa* **aa**
+
+# 사진넣기
+생략 : 판닥을 이용함
+
+# 링크기
+[구글로 가기](http://google.co.kr)
+
+# HTML 명령어 사용하기
+`<video src="C:/data/video/lecture_00.mp4" width=500 controls autoplay> </video>`
+`<img src="C:/data/image_gif/dog3.gif" alt="Sleepy Dog", width="100%"/>`
+
+# 지도삽입하기
+
+---
+title: "Resume"
+author: "Seo_Jiwan_20121795"
+date: "2018년 11월 28일"
+output: html_document
+---
+
+Below is a map that shows the location of the
+Blue House
+```{r out.width='100%', echo=FALSE}
+library(leaflet)
+leaflet() %>% addTiles() %>%
+setView(126.975, 37.587, zoom = 16) %>%
+addPopups(126.975160, 37.587851, 'Here is the <b>Blue House</b>, ')
+```
+
